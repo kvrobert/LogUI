@@ -1,6 +1,6 @@
  
 .gray{
-        background: #BDBDBD; 
+        background: linen; 
 }
 #header
 {
@@ -14,7 +14,18 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=1 );
     color: white; 
     font-weight: bolder;
-    font-family:  "Purisa", Times ,serif;
+    font-family:  "Segoe Print", Times ,serif;
     border-bottom: 10px;
+    letter-spacing: 25px;
+    text-shadow: 5px 4px gray;
+    
+}
+thead.gray
+table.table-striped
+{
+    text-align: center;
+}
+div.Calendar{
+    margin: 50px 50px 50px 50px;
     
 }
