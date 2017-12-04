@@ -4,44 +4,272 @@
         <title>Time Logger Project</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="src/index.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+        <script src="src/index.js"></script>
     </head>
-    <body class="gray">
-        <div id ="header" class="container">
-            <h1 class=" text text-center"> Time Logger </h1>
-        </div>
-        <div class="Calendar">
-            <table border="1" align="center" class=" table table-striped" style="width: 80%">
-                <thead class="gray">
-                    <tr class="gray"  >
-                        <th>Mo</th>
-                        <th>Tu</th>
-                        <th>We</th>
-                        <th>Th</th>
-                        <th>Fr</th>
-                        <th>Sa</th>
-                        <th>Su</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="gray" align="right" >
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+    <body>
+       
+        <div id="container">
+           
+            <header>
+                <h1><a href="" >Time Logger</a></h1>
+                <nav>
+                    <ul>
+                        <li> <a href="" id="linkListMonths">Displays the Months</a></li>
+                        <li> <a href="" id="linkListDays">Displays the Days</a></li>
+                    </ul> 
+                </nav>
+            </header>
+            
+            <div id="main">
+                <div class="left">
+                    <section id="monthStatistics" class="sideBoxes">
+                        <h2>Month Statistics</h2>                        
+                        <div class="statisticsInfo">
+                            <h4>Required Minuten</h4>
+                            <span>1546</span>
+                        </div>
+                        <div class="statisticsInfo">
+                            <h4>Summary Minuten</h4>
+                            <span>2555</span>
+                        </div>
+                        <div class="statisticsInfo">
+                            <h4>Extra Minuten</h4>
+                            <span>111</span>
+                        </div>
+                    </section>
+                </div>
+                <div class="center">
                     
-                </tbody>
-            </table>
-
+                    <section id="calendar">
+                        <nav id="yearMonth">
+                            <- YYYY MM ->
+                        </nav>
+                        
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Mo</th>
+                                    <th>Tu</th>
+                                    <th>We</th>
+                                    <th>Th</th>
+                                    <th>Fr</th>
+                                    <th>Sa</th>
+                                    <th>Su  </th>                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-ix="1"><div>1</div></td>
+                                    <td data-ix="2"><div>2</div></td>
+                                    <td data-ix="3" class="nonEmpty"><div>3</div></td>
+                                    <td data-ix="4"><div>4</div></td>
+                                    <td data-ix="5"><div>5</div></td>
+                                    <td data-ix="6"><div>6</div></td>
+                                    <td data-ix="7"><div>7</div></td>
+                                </tr>
+                                <tr>
+                                    <td data-ix="8" class="nonEmpty"><div>8</div></td>
+                                    <td data-ix="9"><div>9</div></td>
+                                    <td data-ix="10" class="nonEmpty"><div>10</div></td>
+                                    <td data-ix="11"><div>11</div></td>
+                                    <td data-ix="12"><div>12</div></td>
+                                    <td data-ix="13"><div>13</div></td>
+                                    <td data-ix="14" class="nonEmpty"><div>14</div></td>
+                                </tr>
+                                <tr>
+                                    <td data-ix="15"><div>15</div></td>
+                                    <td data-ix="16"><div>16</div></td>
+                                    <td data-ix="17"><div>17</div></td>
+                                    <td data-ix="18"><div>18</div></td>
+                                    <td data-ix="19"><div>19</div></td>
+                                    <td data-ix="20" ><div>20</div></td>
+                                    <td data-ix="21" class="nonEmpty"><div>21</div></td>
+                                </tr>
+                                <tr>
+                                    <td data-ix="22"><div>22</div></td>
+                                    <td data-ix="23"><div>23</div></td>
+                                    <td data-ix="24"><div>24</div></td>
+                                    <td data-ix="25"><div>25</div></td>
+                                    <td data-ix="26"><div>26</div></td>
+                                    <td data-ix="27"><div>27</div></td>
+                                    <td data-ix="28"><div>28</div></td>
+                                </tr>
+                                <tr>
+                                    <td data-ix="29"><div>29</div></td>
+                                    <td data-ix="30"><div>30</div></td>
+                                    <td data-ix="31"><div>31</div></td>
+                                    <td data-ix="1"><div>1</div></td>
+                                    <td data-ix="2"><div>2</div></td>
+                                    <td data-ix="3"><div>3</div></td>
+                                    <td data-ix="4"><div>4</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </section>
+                </div>
+                <div class="right">
+                    
+                    <section id="dayStatistics" class="sideBoxes">
+                        <h2>Day Statistics</h2>                        
+                        <div class="statisticsInfo">
+                            <h4>Required Minuten</h4>
+                            <span>1546</span>
+                        </div>
+                        <div class="statisticsInfo">
+                            <h4>Summary Minuten</h4>
+                            <span>2555</span>
+                        </div>
+                        <div class="statisticsInfo">
+                            <h4>Extra Minuten</h4>
+                            <span>111</span>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+            
+        </div>
+        <div id="displayTasks" class="popUpWindow">
+            
+            <section>
+                <h2><a href="">Tasks</a></h2>
+                <div class="taskTable">
+                    <table>
+                        <thead>
+                            <th>ID</th>
+                            <th>Comment</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Required Minuten</th>
+                            <th>Summry Minuten</th>
+                            <th>Extra Minuten</th>
+                            <th>ed.</th>
+                            <th>del.</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lt-2561</td>
+                                <td>Bazi sok meló</td>
+                                <td>15:15</td>
+                                <td>16:00</td>
+                                <td>450</td>
+                                <td>45</td>
+                                <td>-405</td>
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                            <tr>
+                                <td>Lt-2561</td>
+                                <td>Bazi sok meló</td>
+                                <td>15:15</td>
+                                <td>16:00</td>
+                                <td>450</td>
+                                <td>45</td>
+                                <td>-405</td>
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                            <tr>
+                                <td>Lt-2561</td>
+                                <td>Bazi sok meló</td>
+                                <td>15:15</td>
+                                <td>16:00</td>
+                                <td>450</td>
+                                <td>45</td>
+                                <td>-405</td>
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="createTask">New Task</button>
+                </div>
+                
+            </section>
             
         </div>
         
+        <div id="displayMonths" class="popUpWindow">
+            <section>
+                <h2><a href="">Months</a></h2>
+                <div class="taskTable">
+                    <table>
+                        <thead>
+                            <th>Year</th>
+                            <th>Month</th>                            
+                            <th>ed.</th>
+                            <th>del.</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2017</td>
+                                <td>November</td>                                
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                            <tr>
+                                <td>2017</td>
+                                <td>November</td>                                
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                            <tr>
+                                <td>2017</td>
+                                <td>November</td>                                
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="createMonth">New Month</button>
+                </div>
+                
+            </section>
+        </div>
+        
+        <div id="displayDays" class="popUpWindow">
+            <section>
+                <h2><a href="">Days</a></h2>
+                <div class="dayTable">
+                    <table>
+                        <thead>
+                            <th>Year</th>
+                            <th>Month</th>                            
+                            <th>Day</th>                            
+                            <th>ed.</th>
+                            <th>del.</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2017</td>
+                                <td>November</td>                                
+                                <td>25</td>                                
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                            <tr>
+                                <td>2017</td>
+                                <td>November</td>   
+                                <td>25</td>
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                            <tr>
+                                <td>2017</td>
+                                <td>November</td>     
+                                <td>25</td>
+                                <td><a href="">×</a></td>
+                                <td><a href="">×</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="createDay">New Month</button>
+                </div>
+                
+            </section>
+        </div>
     </body>
 </html>

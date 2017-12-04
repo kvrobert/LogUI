@@ -1,0 +1,340 @@
+@font-face
+{
+    font-family: "realway_light";
+    src: url(../res/realway_light.ttf); /* csshez képest relatív út... a ".." a kilépéshez kell*/
+}
+html, body
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "realway_light";
+    background: #ebebeb;
+}
+
+#container
+{    
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+/* HEADER */
+
+#container > header /*  a contaiiner közvetlen gyermeke..így ha bent is lesz még header, akkor is egyértelmű */
+{
+    background: #8baad9;
+    float: left; /* így már nem tölti ki 100%osan a teret...a tartalom határozza majd meg */
+    width: 100%; /* így teljes szélességű lesz*/
+    height: 15%;
+    position: relative;
+    overflow: hidden; /* így a nav nem fogja kitakarni.... H1 nem fog kilógni...nem néz ki hülyén*/
+}
+    #container > header h1
+    {       
+        margin: 0;
+        text-align: center;
+        font-size: 20px;
+        padding: 15px 0;
+        background: #8baad9;
+    }
+        #container > header h1 a 
+        {
+            text-decoration: none;
+            color: #fff;            
+        }
+    #container > header nav
+    {
+        background: #7fa0d5;
+        margin: 0;
+        float: left;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        
+    }
+        #container > header nav ul
+        {            
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            float: left;
+            text-align: center;
+        }
+            #container > header nav ul li
+            {
+                display: inline-block;                
+            }
+                #container > header nav ul li a
+                {
+                    display: block;
+                    color: #dbf2ff;
+                    text-decoration: none;
+                    font-size: 16px;
+                    padding: 10px 25px;                    
+                }
+                #container > header nav ul li a:hover
+                {
+                    background: #6e91cb;
+                    color: #fff;
+                }
+/* MAIN */
+
+#main
+{   
+    float: left;
+    width: 100%;
+    height: 85%;
+}
+    #main > .left 
+    {       
+        float: left;
+        height: 100%;
+        width: 15%;
+        padding: 15px;
+        padding-right: 0;
+        padding-top: 0;
+        box-sizing: border-box;  /* Hogy a padding értéke beletartozzon az össz szélességekbe.. */
+    }
+    #main > .center 
+    {        
+        height: 100%;
+        float: left;
+        width: 70%;
+        position: relative;
+    }
+    #main > .right
+    {        
+        height: 100%;
+        float: left; /*  mivel kitöltik a teljes teret itt mindegy hogy nem RIGHT... am */
+        width: 15%;
+        padding: 15px;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-top: 0;
+    }
+#calendar
+{
+    position: absolute;     /* Itt ha nem lenne abszolute és az ő szülöje rtelative 
+                            pozicióban, a margint a szélességből számolná és az alsó rész nem helyesen jelenne meg... */
+    
+    margin: 0;
+    padding: 0;
+    left: 2.5%;
+    top: 2.5%;
+    float: left;
+    width: 95%;
+    height: 95%;    
+}
+
+    #calendar >  table
+    {
+        margin: 0;
+        border: 1px solid rgba( 0, 0, 0, 0.1 );
+        border-collapse: collapse; /* így a celláknak nem is kell megadni szegélyt.... */
+        background: #ffffff;
+        width: 100%;
+        height: 95%;
+        float: left;
+    }
+         #calendar >  table thead th
+         {            
+            text-align: center; 
+            background: #8baad9;
+            
+            
+         }
+         #calendar >  table tbody td
+         {              
+            text-align: center;
+            height: 15%;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid rgba( 0, 0, 0, 0.1 );
+            box-sizing: border-box;
+         }
+         #calendar >  table tbody td:hover
+         {
+             background: #ddd;
+         }
+         
+         #calendar >  table tbody td div
+         {
+             width: 100%;
+             height: 100%;
+             margin: 0;
+             font-size: 16px;
+             background: #fff;
+             position: absolute;
+             left: 0;
+             top: 0;
+             z-index: 100;
+             box-shadow: 3px 3px 0px rgba( 0, 0, 0, 0.25 );
+             transition: width 0.5s, height 0.5s, top 0.5s, left 0.5s, font-size 0.5s, box-shadow 1s;
+         }
+         
+         #calendar >  table tbody td:hover div
+         {
+             width: 120%;
+             height: 120%;
+             left: -10%;
+             top: -10%;
+             font-size: 20px;
+             box-shadow: 3px 3px 20px rgba( 0, 0, 0, 0.25 );
+             z-index: 101;          
+             border-radius: 10px;
+             
+         }
+         
+         
+         #calendar >  table th, #calendar >  table thead td
+         {
+             width: 14.28%;
+         }
+         #calendar > nav {
+            
+            width: 100%;
+            height: 5%;
+            float: left;
+            text-align: center;    
+            display: inline-block;
+            padding: 5px 5px;
+            box-sizing: border-box; /* ad dobozok mérete a bennelévő tartalomra
+                                    vonatkozik...egyéb szegély stn ehhez adodik még hozzá..ezzel a padding nem változtat az össz méreten */
+         }
+         
+         #calendar table .nonEmpty div
+         {
+             background: #c7cce9;;
+         }
+
+#main .sideBoxes
+{
+    margin-top: 9%;
+    background: bisque;
+    text-align: center;
+    background: #8baad9;
+    color: #fff;
+    border-radius: 10px;
+    overflow-x: hidden; 
+    
+}
+
+    #main .sideBoxes h2
+    {
+        background: #4766a7;
+        float: left;
+        width: 100%;
+        /*  margin: 0 !important; */
+        margin-top: 0;
+        padding: 10px;
+        font-size: 17px;
+    }
+
+
+    .statisticsInfo
+    {           
+        border: 1px solid #4766a7; 
+        margin: 10%;
+        width: 80%;
+        float: left;
+        border-radius: 10px;
+    }
+        .statisticsInfo h4 
+        {
+            margin-bottom: 20px;
+            margin-top: -9px;
+            margin-left: 10px;
+            padding: 0 5px;
+            font-size: 12px;
+            background: #8baad9;
+            text-align: left;
+            float: left;            
+        }
+        .statisticsInfo span
+        {
+            display: inline-block;
+            width: 100%;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+/* Display Zasks */
+
+.popUpWindow
+{
+    display: none;
+    background: rgba( 0, 0, 0, 0.8 );
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 200;
+}
+    .popUpWindow > section
+    {
+        background: white;
+        margin: 0 auto; 
+        margin-top: 2%;
+        width: 95%;
+        max-width: 1000px;
+        height: 65%;
+        text-align: center;
+    }
+        .popUpWindow > section h2
+        {
+            margin: 10px 5px;
+            text-align: center;
+            float: left;
+            width: 100%;
+            height: 5%;
+        }
+            .popUpWindow > section h2 a
+            {
+                text-decoration: none;            
+            }
+        .popUpWindow > section > div
+        {
+            margin: 0; 
+            width: 100%;
+            height: 95%;
+            float: left;
+        }
+        .popUpWindow > section table
+        {
+            border-collapse: collapse; /* így a celláknak nem is kell megadni szegélyt.... */
+            margin: 2%;              
+            float: left;
+            width: 96%;
+        }
+            .popUpWindow > section table td
+            {
+                border-top: 1px solid #ddd;                
+                text-align: center;
+                padding: 5px;
+            }
+            .popUpWindow > section table tbody tr:hover
+            {
+                background: #ddd;
+            }
+                .popUpWindow > section table tbody td a
+                {
+                    text-decoration: none;
+                }
+    .popUpWindow #createTask
+    {
+        margin: 0;
+        padding: 2px;
+        height: 5%;
+        display: inline-block;        
+    }
+#displayDays { display: none; }
+#displayMonth { display: none; }
+#displayTasks { display: none; }
